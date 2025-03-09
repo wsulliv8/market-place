@@ -1,0 +1,25 @@
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 300px;
+  height: 180px;
+  padding: 0.5rem;
+  border: var(--primary-dark) solid 2px;
+  border-radius: var(--radius-md);
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.testimonial :first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating {
+  display: flex;
+  gap: 2px;
+}
