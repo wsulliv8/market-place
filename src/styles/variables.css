@@ -10,9 +10,11 @@
   /* Neutrals */
   --text-primary: #212121;
   --text-secondary: #757575;
-  --background: #fffff0;
+  --background: #f8f9fa;
   --surface: #f5f5f5;
   --border: #e0e0e0;
+  --off-white: #fffff0;
+  --off-black: #343434;
 
   /* Spacing */
   --spacing-xs: 0.25rem;

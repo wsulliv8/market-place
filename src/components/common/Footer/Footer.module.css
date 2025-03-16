@@ -32,7 +32,7 @@ footer {
   gap: 0.5rem;
 }
 
-input {
+.subscribe > input {
   border: none;
   outline: none;
   width: 200px;

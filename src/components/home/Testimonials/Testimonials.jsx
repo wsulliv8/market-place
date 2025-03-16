@@ -15,6 +15,7 @@ export default function Testimonials() {
     <>
       {testimonials.map((testimonial) => (
         <div
+          key={testimonial.id}
           className={styles.testimonial}
           style={{ transform: `rotate(${getRandom()}deg)` }}
         >
