@@ -94,6 +94,7 @@ aside {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  justify-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
@@ -176,4 +177,110 @@ aside {
 .comboCards {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media (max-width: 992px) {
+  .shopContainer {
+    gap: 1.5rem;
+  }
+
+  .productGrid {
+    gap: 1rem;
+  }
+
+  .productCard {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shopContainer {
+    flex-direction: column;
+    padding-top: 160px;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  aside {
+    width: 50%;
+    overflow-x: hidden;
+    padding: 1rem;
+    order: 1;
+  }
+
+  .ingredient .ingredientSlider {
+    width: 60%;
+    max-width: 10rem;
+  }
+
+  .filterSection > span {
+    flex-wrap: wrap;
+  }
+
+  .productContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    order: 2;
+  }
+
+  .topBar {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .activeFilters {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .productGrid {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .productCard {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .priceContainer {
+    padding-bottom: 0.5rem;
+  }
+
+  .combos {
+    margin-top: 2rem;
+    width: 100%;
+
+    & h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .comboCards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+  .shopContainer {
+    padding: 100px 10px 10px 10px;
+  }
+
+  .productCard {
+    width: 100%;
+  }
+
+  .topBar {
+    padding: 0.5rem 0;
+  }
 }

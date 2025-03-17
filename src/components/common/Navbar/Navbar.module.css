@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  flex-wrap: wrap;
   width: 100vw;
   padding: 1rem 2rem;
   position: absolute;
@@ -159,4 +159,19 @@ nav {
 
 .searchIcon {
   color: var(--burnt-orange);
+}
+
+@media (max-width: 768px) {
+  .header {
+    gap: 1rem;
+  }
+
+  .logo,
+  nav.nav {
+    position: static;
+  }
+
+  .logo {
+    width: 100%;
+  }
 }

@@ -23,3 +23,10 @@
   display: flex;
   gap: 2px;
 }
+
+@media (max-width: 768px) {
+  .testimonial {
+    width: 15rem;
+    height: auto;
+  }
+}

@@ -34,6 +34,7 @@ footer {
 .subscribe {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   border-radius: 10px;
   gap: 0.5rem;
 }
@@ -87,5 +88,42 @@ footer {
     justify-content: center;
     align-items: flex-start;
     gap: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .memberStrip {
+    gap: 1rem;
+  }
+
+  .footerData {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .footerData :first-child {
+    & > h1 {
+      font-size: 1rem;
+    }
+  }
+
+  .footerLinks {
+    gap: 2rem;
+  }
+
+  .subscribe {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .subscribe input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .subscribe button {
+    margin-top: 0.5rem;
+    width: fit-content;
   }
 }

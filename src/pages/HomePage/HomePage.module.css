@@ -1,6 +1,8 @@
 .homepage {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 50px;
 }
 
@@ -28,7 +30,7 @@
   & > .actionButton {
     position: absolute;
     bottom: 3.5rem;
-    left: 50%;
+    left: calc(50% - 50px);
     z-index: 1;
   }
 }
@@ -51,6 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
   width: 100vw;
 
@@ -100,5 +103,27 @@
     color: var(--primary-dark);
     font-size: 28px;
     transform: rotate(-20deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    max-width: 95vw;
+
+    & > div {
+      gap: 0.2rem;
+      width: 20rem;
+      transform: rotate(0deg);
+    }
+
+    & > img {
+      width: 15rem;
+      transform: rotate(0deg);
+    }
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+    max-width: 90vw;
   }
 }
