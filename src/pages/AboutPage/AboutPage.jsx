@@ -4,6 +4,8 @@ import { useState } from "react";
 import { FaPlus as plus } from "react-icons/fa";
 import { FaMinus as minus } from "react-icons/fa";
 import Icon from "../../components/common/Icon/Icon";
+import happySlab from "../../assets/images/happySlab.webp";
+import sadSlab from "../../assets/images/sadSlab.webp";
 
 export default function AboutPage() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -41,8 +43,8 @@ export default function AboutPage() {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          <img src="../../src/assets/images/happySlab.webp" alt="" />
-          <img src="../../src/assets/images/sadSlab.webp" alt="" />
+          <img src={happySlab} alt="" />
+          <img src={sadSlab} alt="" />
         </div>
       </div>
       <div className={styles.faqContainer}>

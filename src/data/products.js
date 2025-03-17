@@ -1,8 +1,20 @@
+import cholula from "../assets/images/bottles/cholula.png";
+import habanero from "../assets/images/bottles/habanero.png";
+import lolas from "../assets/images/bottles/lolas.png";
+import noname from "../assets/images/bottles/noname.png";
+import redhot from "../assets/images/bottles/redhot.png";
+import taco from "../assets/images/bottles/taco.png";
+import thick from "../assets/images/bottles/thick.png";
+import tobasco from "../assets/images/bottles/tobasco.png";
+import pair1 from "../assets/images/bottles/pair1.png";
+import pair2 from "../assets/images/bottles/pair2.png";
+import pair3 from "../assets/images/bottles/pair3.png";
+
 const products = [
   {
     id: 0,
     name: "Black Death",
-    imageURL: "../src/assets/images/bottles/cholula.png",
+    imageURL: cholula,
     price: 9.99,
     peppers: ["Habanero", "Jalapeno"],
     heatLevel: "Hot",
@@ -21,7 +33,7 @@ const products = [
     id: 1,
     name: "Green Boi",
     price: 11.99,
-    imageURL: "../src/assets/images/bottles/habanero.png",
+    imageURL: habanero,
     peppers: ["Jalapeno", "Bell"],
     heatLevel: "Mild",
     ingredients: {
@@ -39,7 +51,7 @@ const products = [
     id: 2,
     name: "Liquid Pain",
     price: 41.99,
-    imageURL: "../src/assets/images/bottles/lolas.png",
+    imageURL: lolas,
     peppers: ["Ghost"],
     heatLevel: "Death",
     ingredients: {
@@ -56,7 +68,7 @@ const products = [
   {
     id: 3,
     name: "Scorching Blaze",
-    imageURL: "../src/assets/images/bottles/noname.png",
+    imageURL: noname,
     price: 12.99,
     peppers: ["Cayenne", "Serrano"],
     heatLevel: "Very Hot",
@@ -74,7 +86,7 @@ const products = [
   {
     id: 4,
     name: "Tropical Inferno",
-    imageURL: "../src/assets/images/bottles/redhot.png",
+    imageURL: redhot,
     price: 11.49,
     peppers: ["Habanero", "Ghost Pepper"],
     heatLevel: "Extreme",
@@ -92,7 +104,7 @@ const products = [
   {
     id: 5,
     name: "Smokey Tango",
-    imageURL: "../src/assets/images/bottles/taco.png",
+    imageURL: taco,
     price: 10.99,
     peppers: ["Chipotle", "Jalapeno"],
     heatLevel: "Medium",
@@ -110,7 +122,7 @@ const products = [
   {
     id: 6,
     name: "Fiery Mango",
-    imageURL: "../src/assets/images/bottles/thick.png",
+    imageURL: thick,
     price: 8.99,
     peppers: ["Habanero", "Bell Pepper"],
     heatLevel: "Medium",
@@ -128,7 +140,7 @@ const products = [
   {
     id: 7,
     name: "The Green Fiend",
-    imageURL: "../src/assets/images/bottles/tobasco.png",
+    imageURL: tobasco,
     price: 7.99,
     peppers: ["Serrano", "Jalapeno"],
     heatLevel: "Mild",
@@ -151,7 +163,7 @@ const combos = [
     name: "Beginner Bundle",
     sauces: ["Mango Tango", "Garlic Blaze"],
     price: 14.99,
-    imageURL: "../src/assets/images/bottles/pair1.png",
+    imageURL: pair1,
     description: `Unleash the full force of heat with our Ultimate Heat Lover's Bundle. Featuring a mix of our hottest sauces, this pack will satisfy the most daring chili-heads. Perfect for those who crave spice at every meal!`,
   },
   {
@@ -159,7 +171,7 @@ const combos = [
     name: "Heat Lovers Pack",
     sauces: ["Ghost Fire", "Scorpion Sting", "Carolina Reaper"],
     price: 39.99,
-    imageURL: "../src/assets/images/bottles/pair2.png",
+    imageURL: pair2,
     desciption: `Take your taste buds on a tropical adventure with the Tropical Flavor Explosion Pack. This bundle combines sweet, spicy, and smoky flavors for a unique, delicious experience in every bottle. Perfect for adding a dash of summer to your food!`,
   },
   {
@@ -167,7 +179,7 @@ const combos = [
     name: "World Tour",
     sauces: ["Red Devil", "Thai Delight", "Smoky Chipotle"],
     price: 24.99,
-    imageURL: "../src/assets/images/bottles/pair3.png",
+    imageURL: pair3,
     description: `Elevate your grilling game with our BBQ Master Collection. This bundle includes a variety of smoky, savory, and tangy sauces that are a perfect match for meats, burgers, and all your favorite BBQ dishes. Get ready to impress at your next cookout!`,
   },
   {
@@ -175,7 +187,7 @@ const combos = [
     name: "Complete Collection",
     sauces: ["All 8 Sauces"],
     price: 79.99,
-    imageURL: "../src/assets/images/bottles/pair1.png",
+    imageURL: pair1,
     desciption: `For the perfect balance of flavor and heat, our Everyday Heat Bundle has you covered. Featuring medium-spicy sauces that work with everything from tacos to wings, this pack is a must-have for spice lovers who want a little kick in their everyday meals.`,
   },
 ];
