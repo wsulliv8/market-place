@@ -1,12 +1,74 @@
-# React + Vite
+# 🔥 FLAME & GLORY - Hot Sauce E-commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce platform built with Vite, React, and React Router, showcasing a curated selection of artisanal hot sauces.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design**: Fully optimized for all devices from mobile to desktop
+- **Dynamic Product Catalog**: Real-time filtering and sorting capabilities
+- **Shopping Cart**: Persistent cart functionality with local storage integration
+- **Heat Level Visualization**: Interactive scale to display spice intensity
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend Framework**: React 18
+- **Build Tool**: Vite
+- **Routing**: React Router v6
+- **State Management**: React Context API & Custom Hooks
+- **Styling**: CSS Modules
+- **Deployment**: Netlify
+
+## Code
+
+The project follows a component-based architecture with a focus on reusability and maintainability:
+
+```
+├── public
+└── src
+    ├── assets
+    │   ├── fonts
+    │   └── images
+    ├── components
+    │   ├── cart
+    │   ├── common
+    │   ├── home
+    │   ├── layout
+    │   └── shop
+    ├── context
+    ├── data
+    ├── pages
+    │   ├── AboutPage
+    │   ├── ErrorPage
+    │   ├── HomePage
+    │   └── ShopPage
+    ├── styles
+    └── utils
+```
+
+## Getting Started
+
+### Prerequisites
+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/wsulliv8/market-place.git
+
+# Navigate to the project directory
+cd market-place
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
