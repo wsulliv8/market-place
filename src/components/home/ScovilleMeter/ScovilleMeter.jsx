@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PepperScoville from "./PepperScoville";
 import styles from "./ScovilleMeter.module.css";
 import Button from "../../common/Button/Buttons";
@@ -8,7 +9,9 @@ import InfoPopup from "../../common/InfoPopup/InfoPopup";
 export default function ScovilleMeter() {
   const [scoville, setScoville] = useState(0);
   const [calculatedScoville, setCalculatedScoville] = useState(0);
+  const [heatLevel, setHeatLevel] = useState("Mild");
   const MAX = 1000000;
+  const navigate = useNavigate();
 
   const heatColors = {
     0: styles.green1,
@@ -24,9 +27,19 @@ export default function ScovilleMeter() {
     900000: styles.black,
   };
 
+  const heatLevelMap = {
+    0: "Mild",
+    1: "Medium",
+    2: "Hot",
+    3: "Extreme",
+    4: "Death",
+    5: "Death",
+  };
+
   const handleChange = (scoville) => {
     setScoville(scoville);
     setCalculatedScoville(Math.round(Math.pow(scoville / 100, 3) * MAX));
+    setHeatLevel(heatLevelMap[Math.floor((scoville / 100) * 5)]);
   };
 
   const getColor = (scoville) => {
@@ -86,7 +99,12 @@ export default function ScovilleMeter() {
           <h2>Heat Level: </h2>
           <PepperScoville scoville={calculatedScoville} />
         </span>
-        <Button className={getColor(calculatedScoville)}>Find Sauces!</Button>
+        <Button
+          className={getColor(calculatedScoville)}
+          onClick={() => navigate(`/shop?heat=${heatLevel}`)}
+        >
+          Find Sauces!
+        </Button>
       </div>
     </div>
   );

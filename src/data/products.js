@@ -41,7 +41,7 @@ const products = [
     price: 41.99,
     imageURL: "../src/assets/images/bottles/lolas.png",
     peppers: ["Ghost"],
-    heatLevel: "Extreme+",
+    heatLevel: "Death",
     ingredients: {
       Salt: 2,
       Garlic: 0,
@@ -151,7 +151,7 @@ const combos = [
     name: "Beginner Bundle",
     sauces: ["Mango Tango", "Garlic Blaze"],
     price: 14.99,
-    imageUrl: "../src/assets/images/bottles/pair1.png",
+    imageURL: "../src/assets/images/bottles/pair1.png",
     description: `Unleash the full force of heat with our Ultimate Heat Lover's Bundle. Featuring a mix of our hottest sauces, this pack will satisfy the most daring chili-heads. Perfect for those who crave spice at every meal!`,
   },
   {
@@ -159,7 +159,7 @@ const combos = [
     name: "Heat Lovers Pack",
     sauces: ["Ghost Fire", "Scorpion Sting", "Carolina Reaper"],
     price: 39.99,
-    imageUrl: "../src/assets/images/bottles/pair2.png",
+    imageURL: "../src/assets/images/bottles/pair2.png",
     desciption: `Take your taste buds on a tropical adventure with the Tropical Flavor Explosion Pack. This bundle combines sweet, spicy, and smoky flavors for a unique, delicious experience in every bottle. Perfect for adding a dash of summer to your food!`,
   },
   {
@@ -167,7 +167,7 @@ const combos = [
     name: "World Tour",
     sauces: ["Red Devil", "Thai Delight", "Smoky Chipotle"],
     price: 24.99,
-    imageUrl: "../src/assets/images/bottles/pair3.png",
+    imageURL: "../src/assets/images/bottles/pair3.png",
     description: `Elevate your grilling game with our BBQ Master Collection. This bundle includes a variety of smoky, savory, and tangy sauces that are a perfect match for meats, burgers, and all your favorite BBQ dishes. Get ready to impress at your next cookout!`,
   },
   {
@@ -175,7 +175,7 @@ const combos = [
     name: "Complete Collection",
     sauces: ["All 8 Sauces"],
     price: 79.99,
-    imageUrl: "../src/assets/images/bottles/pair1.png",
+    imageURL: "../src/assets/images/bottles/pair1.png",
     desciption: `For the perfect balance of flavor and heat, our Everyday Heat Bundle has you covered. Featuring medium-spicy sauces that work with everything from tacos to wings, this pack is a must-have for spice lovers who want a little kick in their everyday meals.`,
   },
 ];

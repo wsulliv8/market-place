@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./ShopPage.module.css";
 import { products, combos } from "../../data/products";
@@ -14,11 +15,15 @@ import { FaMinus as minus } from "react-icons/fa";
 import Button from "../../components/common/Button/Buttons";
 import Icon from "../../components/common/Icon/Icon";
 import InfoPopup from "../../components/common/InfoPopup/InfoPopup";
-import { GiHotSurface } from "react-icons/gi";
+import { useCart } from "../../context/CartContext";
 
 export default function ShopPage() {
+  const [searchParams] = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
+  const desiredHeatLevel = searchParams.get("heat");
+
   const [selectedFilters, setSelectedFilters] = useState({
-    heatLevel: [],
+    heatLevel: desiredHeatLevel ? [desiredHeatLevel] : [],
     peppers: [],
     pairs: [],
     ingredients: [],
@@ -80,6 +85,20 @@ export default function ShopPage() {
   useEffect(() => {
     let result = [...products];
 
+    if (searchQuery) {
+      result = result.filter((sauce) => {
+        return sauce.name
+          .toLowerCase()
+          .concat(
+            sauce.peppers.join().toLowerCase(),
+            sauce.heatLevel.toLowerCase(),
+            sauce.pairs.join().toLocaleLowerCase(),
+            sauce.description.toLocaleLowerCase()
+          )
+          .includes(searchQuery.toLocaleLowerCase());
+      });
+    }
+
     if (selectedFilters.heatLevel.length > 0)
       result = result.filter((sauce) =>
         selectedFilters.heatLevel.includes(sauce.heatLevel)
@@ -123,7 +142,7 @@ export default function ShopPage() {
     else result.sort((a, b) => a.name.localeCompare(b.name));
 
     setFilteredProducts(result);
-  }, [selectedFilters, ingredientLevels, sortBy]);
+  }, [selectedFilters, ingredientLevels, sortBy, searchQuery]);
 
   const totalSelectedFilters =
     selectedFilters.heatLevel.length +
@@ -329,9 +348,11 @@ export default function ShopPage() {
       </div>
       <section className={styles.combos}>
         <h2>Check out these combo deals!</h2>
-        {combos.map((combo) => (
-          <ProductCard sauce={combo} type={"combo"} />
-        ))}
+        <div className={styles.comboCards}>
+          {combos.map((combo) => (
+            <ProductCard sauce={combo} type={"combo"} />
+          ))}
+        </div>
       </section>
     </div>
   );
@@ -381,6 +402,9 @@ const IngredientSlider = ({ title, selectedFilters, setIngredientLevels }) => {
 };
 
 const ProductCard = ({ sauce, type }) => {
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
   return (
     <div key={sauce.id} className={styles.productCard}>
       <div className={styles.imageContainer}>
@@ -405,8 +429,19 @@ const ProductCard = ({ sauce, type }) => {
       </InfoPopup>
       <div className={styles.titleContainer}>
         <h3>{sauce.name}</h3>
-        <p>${sauce.price.toFixed(2)}</p>
-        <Button size={"small"}>Add to Cart</Button>
+        <div className={styles.priceContainer}>
+          <p>${sauce.price.toFixed(2)}</p>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(parseInt(e.target.value))}
+            min="1"
+            max="50"
+          />
+        </div>
+        <Button size={"small"} onClick={() => addToCart(sauce, quantity)}>
+          Add to Cart
+        </Button>
       </div>
     </div>
   );

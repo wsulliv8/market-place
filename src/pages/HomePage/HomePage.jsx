@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import Button from "../../components/common/Button/Buttons";
 import Icon from "../../components/common/Icon/Icon";
@@ -7,26 +8,41 @@ import artisanImage from "../../assets/images/artisan.png";
 import { FaArrowCircleDown as Arrow } from "react-icons/fa";
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <div className={styles.homepage}>
       <section className={styles.hero}>
         <div className={styles.heroImage}></div>
-        <Button className={styles.actionButton}>BUY NOW</Button>
-        <Icon icon={Arrow} className={styles.scroll} size={30} />
+        <Button
+          variant="primary"
+          className={styles.actionButton}
+          onClick={() => navigate("/shop")}
+        >
+          BUY NOW
+        </Button>
       </section>
       <section className={styles.description}>
         <div>
-          <p>
-            Crafted for Flavor, Perfected for Heat <br />
-            🌿 All-Natural Ingredients <br /> We use only the freshest,
-            high-quality peppers, garlic, vinegar, and spices <br /> Just pure,
-            bold flavor in every drop. <br />
-            🌶 Perfectly Balanced Heat Not just about the burn—our sauces are
-            designed to enhance your food, not overpower it.
-            <br />
-            🏆 Handcrafted in Small Batches
-          </p>
-          <Button className={styles.actionButton} size={"medium"}>
+          <div className={styles.flavorText}>
+            <p>
+              Crafted for the bold and the fearless, our hot sauces are more
+              than just condiments—they’re an experience. Each bottle is packed
+              with fire, flavor, and just the right amount of danger. Whether
+              you're chasing that slow-building burn or an instant fiery kick,
+              we've got the perfect heat for you.
+            </p>
+            <ul>
+              <li>Small batch, big flavor!</li>
+              <li>Handcrafted with the finest peppers</li>
+              <li>Heat levels for every kind of spice lover</li>
+            </ul>
+            <h4>Dare to take your taste buds to the next level?</h4>
+          </div>
+          <Button
+            className={styles.actionButton}
+            size={"medium"}
+            onClick={() => navigate("/shop")}
+          >
             VIEW OUR SAUCES
           </Button>
         </div>

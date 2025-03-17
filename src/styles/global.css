@@ -1,6 +1,36 @@
 body {
-  color: var(--text-primary);
+  color: var(--dark-charcoal);
   background-color: var(--background);
-  font-family: var(--font-family);
+  font-family: var(--font-main);
   font-size: var(--font-size-md);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+}
+
+body {
+  color: var(--dark-charcoal);
+  font-family: "Your-Body-Font", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--deep-red);
+  font-family: "Your-Heading-Font", sans-serif;
+}
+
+a {
+  color: var(--burnt-orange);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--deep-burgundy);
 }

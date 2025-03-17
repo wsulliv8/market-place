@@ -1,11 +1,15 @@
 .button {
   width: fit-content;
+  font-weight: bold;
   border-radius: var(--radius-lg);
-  background-color: var(--primary-dark);
-  color: var(--text-primary);
   padding: 10px 15px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-lg);
+
+  &:active {
+    box-shadow: inset var(--shadow-lg);
+  }
 }
 
 /* Sizes */
@@ -22,4 +26,24 @@
 .large {
   font-size: 1.125rem;
   padding: 0.75rem 1.5rem;
+}
+
+.primary {
+  background-color: var(--deep-red);
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: var(--deep-burgundy);
+  }
+}
+
+.secondary {
+  background-color: var(--rich-gold);
+  color: var(--dark-charcoal);
+  border: none;
+
+  &:hover {
+    background-color: #e9a012; /* Slightly darker gold */
+  }
 }

@@ -1,4 +1,4 @@
-export const heatLevels = ["Mild", "Medium", "Hot", "Extreme", "Extreme+"];
+export const heatLevels = ["Mild", "Medium", "Hot", "Extreme", "Death"];
 export const peppers = ["Bell", "Jalapeno", "Serrano", "Habanero", "Ghost"];
 export const ingredients = ["Salt", "Garlic", "Smoke", "Sweet", "Vinegar"];
 export const pairs = [

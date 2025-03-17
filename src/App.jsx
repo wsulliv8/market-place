@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout/MainLayout";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import HomePage from "./pages/HomePage/HomePage";
@@ -7,24 +11,56 @@ import ShopPage from "./pages/ShopPage/ShopPage";
 import "./styles/reset.css";
 import "./styles/variables.css";
 import "./styles/global.css";
+import { useEffect } from "react";
+import { CartProvider } from "./context/CartContext";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: (
+      <>
+        <ScrollToTop />
+        <MainLayout />
+      </>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: (
+          <>
+            <ScrollToTop />
+            <HomePage />
+          </>
+        ),
       },
       {
         path: "shop",
-        element: <ShopPage />,
+        element: (
+          <>
+            <ScrollToTop />
+            <ShopPage />
+          </>
+        ),
       },
       {
         path: "about",
-        element: <AboutPage />,
+        element: (
+          <>
+            <ScrollToTop />
+            <AboutPage />
+          </>
+        ),
       },
     ],
   },
@@ -33,7 +69,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </>
   );
 }

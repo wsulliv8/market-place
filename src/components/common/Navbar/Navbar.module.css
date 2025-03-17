@@ -1,7 +1,8 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
   width: 100vw;
   padding: 1rem 2rem;
   position: absolute;
@@ -9,6 +10,9 @@
 }
 
 .logo {
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,14 +20,13 @@
   line-height: normal;
 
   & > h1 {
-    font-size: 48px;
+    font-size: 32px;
     height: fit-content;
-    color: var(--primary);
+    font-family: var(--font-logo);
   }
 
   & > h3 {
     font-size: 28px;
-    color: var(--primary-light);
   }
 }
 
@@ -34,8 +37,24 @@ nav {
   align-items: center;
   height: min-content;
   width: min-content;
-  border-radius: 10px;
-  background-color: var(--primary-light);
+  border-radius: var(--radius-xl);
+
+  background-color: var(--dark-charcoal);
+
+  & a {
+    color: var(--burnt-orange);
+
+    &:hover,
+    &.activeLink {
+      color: var(--dark-charcoal);
+    }
+  }
+
+  &:last-of-type {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+  }
 }
 
 .flexSpacer {
@@ -54,10 +73,21 @@ nav {
 .searchButton {
   display: inline;
   padding: 0.8rem 1rem;
-  border-radius: 6px;
+  border-radius: var(--radius-xl);
+  position: relative;
 
-  &:hover {
-    background-color: gray;
+  &:first-of-type {
+    border-radius: calc(var(--radius-xl) - 4px) 0 0 calc(var(--radius-xl) - 4px);
+  }
+
+  &:nth-of-type(2),
+  &:nth-of-type(5) {
+    border-radius: 0 calc(var(--radius-xl) - 4px) calc(var(--radius-xl) - 4px) 0;
+  }
+
+  &:hover,
+  &.activeLink {
+    background-color: var(--burnt-orange);
     cursor: pointer;
   }
 }
@@ -66,13 +96,16 @@ nav {
   display: flex;
   align-items: center;
   border-radius: 10px;
+
+  &:hover .searchIcon {
+    fill: var(--dark-charcoal);
+  }
 }
 
 .searchButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 700ms ease-in-out;
   &.expanded {
     height: 30px;
     border: black solid;
@@ -87,20 +120,43 @@ nav {
   outline: none;
   width: 0;
   padding: 0;
-  transition: all 500ms ease-in-out;
+  transition: width 500ms ease-in-out, padding 500ms ease-in-out;
+  border-radius: calc(var(--radius-xl) - 4px) 0 0 calc(var(--radius-xl) - 4px);
+  font-size: 0;
 
   &.expanded {
     width: 150px;
-    border: black solid;
-    padding-left: 5px;
+    padding-left: 10px;
     margin-left: 1rem;
+    font-size: var(--font-size-md);
+    & + button {
+      background-color: var(--burnt-orange);
+      border-radius: 0 calc(var(--radius-xl) - 4px) calc(var(--radius-xl) - 4px)
+        0;
+      padding-right: 5px;
+      & .searchIcon {
+        color: var(--dark-charcoal);
+      }
+    }
   }
 }
 
 .icon {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
+}
+
+.cartCount {
+  font-size: 12px;
+  position: absolute;
+  top: 3px;
+  left: 25px;
+}
+
+.searchIcon {
+  color: var(--burnt-orange);
 }

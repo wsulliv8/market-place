@@ -27,8 +27,7 @@ export default function Footer() {
       </div>
       <div className={styles.footerData}>
         <div>
-          <h1>Demon</h1>
-          <h2>Hot Sauce</h2>
+          <h1>FLAME & GLORY</h1>
           <div className={styles.socialMedia}>
             <Icon icon={insta} size={25} />
             <Icon icon={youtube} size={25} />
